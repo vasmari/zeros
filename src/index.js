@@ -1,21 +1,18 @@
 function countFactors (divisible, divisor) {
-  //
-
-  let divisionResult;
-  let countResult = 0;
- 
-  if ((divisible % divisor) == 0) {
-    divisionResult = divisible;
-    do {
-      divisionResult = divisionResult / divisor;
-      countResult = countResult + 1;      
-    } while ((divisionResult >= divisor) && ((divisionResult % divisor) == 0));
-  }
   
+  let countResult = 0;
+  
+  do {
+    if ((divisible % divisor) == 0) {
+        divisible = divisible / divisor;
+        countResult = countResult + 1;   
+    } else {
+        break;
+      }   
+  } while (divisible >= divisor);
+
   return countResult;
 }
-
-
 
 
 module.exports = function zeros(expression) {
